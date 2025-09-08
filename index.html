@@ -112,8 +112,14 @@
       <h2 class="text-center mb-10 text-3xl font-semibold">
         About the Campaign
       </h2>
-      <div class="w-11/12 sm:w-[72%] sm:flex justify-between items-center gap-7 mx-auto">
-        <img class="max-sm:mb-3 sm:max-w-[530px]" src="assets/about.png" alt="" />
+      <div
+        class="w-11/12 sm:w-[72%] sm:flex justify-between items-center gap-7 mx-auto"
+      >
+        <img
+          class="max-sm:mb-3 sm:max-w-[530px]"
+          src="assets/about.png"
+          alt=""
+        />
         <div class="font-normal text-[16px]">
           <h3 class="mb-5">
             Green Earth is a global tree plantation initiative dedicated to
@@ -131,22 +137,48 @@
     </section>
 
     <!-- our impact section -->
-     <section class="bg-[#CFF0DC] text-center py-10 sm:py-24">
-        <h2 class="text-[32px] font-semibold mb-3 sm:mb-10">Our Impact</h2>
-        <div class="max-sm:flex-col flex justify-center items-center max-sm:gap-5 gap-12">
-            <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm">
-                <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">500K+</h3>
-                <p class="text-[16px] font-normal text-[#1F2937]">Trees Planted</p>
-            </div>
-            <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm">
-                <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">120+</h3>
-                <p class="text-[16px] font-normal text-[#1F2937]">Communities Involved</p>
-            </div>
-            <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm">
-                <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">30+</h3>
-                <p class="text-[16px] font-normal text-[#1F2937]">Countries Reached</p>
-            </div>
+    <section class="bg-[#CFF0DC] text-center py-10 sm:py-24">
+      <h2 class="text-[32px] font-semibold mb-3 sm:mb-10">Our Impact</h2>
+      <div
+        class="max-sm:flex-col flex justify-center items-center max-sm:gap-5 gap-12"
+      >
+        <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm">
+          <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">500K+</h3>
+          <p class="text-[16px] font-normal text-[#1F2937]">Trees Planted</p>
         </div>
-     </section>
+        <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm">
+          <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">120+</h3>
+          <p class="text-[16px] font-normal text-[#1F2937]">
+            Communities Involved
+          </p>
+        </div>
+        <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm">
+          <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">30+</h3>
+          <p class="text-[16px] font-normal text-[#1F2937]">
+            Countries Reached
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- plant a tree section -->
+    <section class="bg-[#166534] flex flex-col justify-center items-center py-10 max-sm:px-5 sm:py-24">
+      <h2 class="text-3xl font-semibold text-white mb-10">
+        Plant a Tree Today
+      </h2>
+      <div class="p-5 sm:p-10 bg-[#15803D] sm:max-w-[650px] w-full rounded-xl shadow-lg">
+        <form class="flex flex-col gap-3 w-full" action="">
+          <input type="text" placeholder="Your Name" class="input w-full" />
+          <input type="email" placeholder="Your Email Address" class="input w-full" />
+          <select class="select w-full">
+            <option disabled selected>Number of Trees</option>
+            <option>1 Tree - $5</option>
+            <option>5 Tree - $25</option>
+            <option>10 Tree - $50</option>
+          </select>
+          <button class="mt-2 btn btn-warning rounded-full hover:bg-yellow-300 w-full">Donate now</button>
+        </form>
+      </div>
+    </section>
   </body>
 </html>
