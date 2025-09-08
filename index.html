@@ -107,6 +107,21 @@
       />
     </section>
 
+    <!-- choose your trees section -->
+    <section class="w-11/12 mx-auto mt-24">
+      <h2 class="text-3xl font-semibold text-center mb-10">Choose Your Trees</h2>
+      <div class="grid grid-cols-3 gap-[30px]">
+        <div class="">
+            <h2 class="text-xl font-semibold mb-5">Categories</h2>
+            <div id="categories" class="w-[250px]">
+                
+            </div>
+        </div>
+        <div id="plants-container"></div>
+        <div id="cart" class=""></div>
+      </div>
+    </section>
+
     <!-- about campaign section -->
     <section class="py-24 bg-[#F0FDF4]">
       <h2 class="text-center mb-10 text-3xl font-semibold">
@@ -142,17 +157,23 @@
       <div
         class="max-sm:flex-col flex justify-center items-center max-sm:gap-5 gap-12"
       >
-        <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm hover:bg-green-50 hover:scale-105">
+        <div
+          class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm hover:bg-green-50 hover:scale-105"
+        >
           <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">500K+</h3>
           <p class="text-[16px] font-normal text-[#1F2937]">Trees Planted</p>
         </div>
-        <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm hover:bg-green-50 hover:scale-105">
+        <div
+          class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm hover:bg-green-50 hover:scale-105"
+        >
           <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">120+</h3>
           <p class="text-[16px] font-normal text-[#1F2937]">
             Communities Involved
           </p>
         </div>
-        <div class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm hover:bg-green-50 hover:scale-105">
+        <div
+          class="max-sm:w-10/12 py-7 sm:px-33 bg-white rounded-lg shadow-sm hover:bg-green-50 hover:scale-105"
+        >
           <h3 class="text-[32px] font-semibold mb-3 text-[#15803D]">30+</h3>
           <p class="text-[16px] font-normal text-[#1F2937]">
             Countries Reached
@@ -162,28 +183,45 @@
     </section>
 
     <!-- plant a tree section -->
-    <section class="bg-[#166534] flex flex-col justify-center items-center py-10 max-sm:px-5 sm:py-24">
+    <section
+      class="bg-[#166534] flex flex-col justify-center items-center py-10 max-sm:px-5 sm:py-24"
+    >
       <h2 class="text-3xl font-semibold text-white mb-10">
         Plant a Tree Today
       </h2>
-      <div class="p-5 sm:p-10 bg-[#15803D] sm:max-w-[650px] w-full rounded-xl shadow-lg">
+      <div
+        class="p-5 sm:p-10 bg-[#15803D] sm:max-w-[650px] w-full rounded-xl shadow-lg"
+      >
         <form class="flex flex-col gap-3 w-full" action="">
           <input type="text" placeholder="Your Name" class="input w-full" />
-          <input type="email" placeholder="Your Email Address" class="input w-full" />
+          <input
+            type="email"
+            placeholder="Your Email Address"
+            class="input w-full"
+          />
           <select class="select w-full">
             <option disabled selected>Number of Trees</option>
             <option>1 Tree - $5</option>
             <option>5 Tree - $25</option>
             <option>10 Tree - $50</option>
           </select>
-          <button class="mt-2 btn btn-warning rounded-full hover:bg-yellow-300 w-full">Donate now</button>
+          <button
+            class="mt-2 btn btn-warning rounded-full hover:bg-yellow-300 w-full"
+          >
+            Donate now
+          </button>
         </form>
       </div>
     </section>
 
     <!-- footer -->
-     <section class="text-center bg-[#14532D] py-6">
-        <h2 class="text-[16px] font-normal text-white">© 2025 Green Earth. All Rights Reserved.</h2>
-     </section>
+    <section class="text-center bg-[#14532D] py-6">
+      <h2 class="text-[16px] font-normal text-white">
+        © 2025 Green Earth. All Rights Reserved.
+      </h2>
+    </section>
+
+    <!-- java script -->
+     <script src="index.js"></script>
   </body>
 </html>
