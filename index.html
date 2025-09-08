@@ -108,20 +108,21 @@
     </section>
 
     <!-- choose your trees section -->
-    <section class="w-11/12 mx-auto mt-24 ">
-      <h2 class="text-3xl font-semibold text-center mb-10">Choose Your Trees</h2>
+    <section class="w-11/12 mx-auto mt-24">
+      <h2 class="text-3xl font-semibold text-center mb-10">
+        Choose Your Trees
+      </h2>
       <div class="grid grid-cols-5">
         <!-- categories -->
         <div class="">
-            <h2 class="text-xl font-semibold mb-5">Categories</h2>
-            <div id="categories" class="w-[230px]">
-                
-            </div>
+          <h2 class="text-xl font-semibold mb-5">Categories</h2>
+          <div id="categories" class="w-[230px]"></div>
         </div>
         <!-- plants -->
-        <div id="plants-container" class="grid grid-cols-3 gap-5 col-span-3">
-            
-        </div>
+        <div
+          id="plants-container"
+          class="grid grid-cols-3 gap-5 col-span-3"
+        ></div>
         <div id="cart" class=""></div>
       </div>
     </section>
@@ -225,7 +226,23 @@
       </h2>
     </section>
 
+    <!-- modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="details-container">
+            
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
     <!-- java script -->
-     <script src="index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
