@@ -4,6 +4,12 @@ const loadCategory = () => {
     .then((res) => res.json())
     .then((json) => displayCategory(json.categories));
 };
+// function for all tree loading
+const loadAllTreeCard = () => {
+  fetch("https://openapi.programming-hero.com/api/plants")
+    .then((res) => res.json())
+    .then((json) => displayTreeCard(json.plants));
+};
 
 // function for active class
 const removeActive = () => {
@@ -13,26 +19,26 @@ const removeActive = () => {
 
 // function for modal tree details
 const loadTreeDetails = (id) => {
-    const url = `https://openapi.programming-hero.com/api/plant/${id}`
-    fetch(url)
-        .then((res) => res.json())
-    .then((json)=> displayDetails(json.plants))
-}
-// display details 
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => displayDetails(json.plants));
+};
+// display details
 const displayDetails = (detail) => {
-    const detailsContainer = document.getElementById("details-container");
-    detailsContainer.innerHTML = `
+  const detailsContainer = document.getElementById("details-container");
+  detailsContainer.innerHTML = `
     
     <h3 class="font-bold text-sm mt-1">${detail.name}</h3>
     <img class="mt-2 max-h-70 w-full object-cover rounded-md" src="${detail.image}" alt="">
-        <p class="mt-2 text-sm"><span class="font-semibold">Category:</span> ${detail.category}</p>
-        <p class="mt-2 font-semibold text-sm"><span class="font-semibold">Price:</span> ৳${detail.price}</p>
-        <p class="mt-2 font-normal text-xs"><span class="font-semibold">Description:</span> ${detail.description}</p>
+    <p class="mt-2 text-sm"><span class="font-semibold">Category:</span> ${detail.category}</p>
+    <p class="mt-2 font-semibold text-sm"><span class="font-semibold">Price:</span> ৳${detail.price}</p>
+    <p class="mt-2 font-normal text-xs"><span class="font-semibold">Description:</span> ${detail.description}</p>
     
-    `
+    `;
 
-    document.getElementById("my_modal_5").showModal()
-}
+  document.getElementById("my_modal_5").showModal();
+};
 
 // tree card loading function
 const loadTreeCard = (id) => {
@@ -77,6 +83,14 @@ const displayCategory = (category) => {
   const categories = document.getElementById("categories");
   categories.innerHTML = "";
 
+  const allTreeBtn = document.createElement("div");
+  allTreeBtn.innerHTML = `
+        <button id="all-tree" onclick="loadAllTreeCard(); removeActive(); document.getElementById('all-tree').classList.add('active') " class="category-btn hover:bg-green-700 hover:text-white px-3 text-base font-normal rounded-sm p-2 text-left w-full">All Trees</button>
+        `;
+  categories.append(allTreeBtn);
+  removeActive();
+  document.getElementById("all-tree").classList.add("active");
+
   for (let cat of category) {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -86,3 +100,4 @@ const displayCategory = (category) => {
   }
 };
 loadCategory();
+loadAllTreeCard();
