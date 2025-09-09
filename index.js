@@ -40,8 +40,21 @@ const displayDetails = (detail) => {
   document.getElementById("my_modal_5").showModal();
 };
 
+// spinner function
+const manageSpinner = (status) => {
+    if (status == true) {
+        document.getElementById("spinner").classList.remove("hidden")
+        document.getElementById("plants-container").classList.add("hidden")
+    }
+    else {
+        document.getElementById("plants-container").classList.remove("hidden")
+        document.getElementById("spinner").classList.add("hidden")
+    }
+}
+
 // tree card loading function
 const loadTreeCard = (id) => {
+    manageSpinner(true)
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -51,6 +64,36 @@ const loadTreeCard = (id) => {
       categoryBtn.classList.add("active");
       displayTreeCard(json.plants);
     });
+};
+
+// add to cart function
+
+const addToCart = (card) => {
+  const cartContainer = document.getElementById("cart-container");
+
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <div class="bg-[#F0FDF4] mb-2 flex justify-between items-center px-3 py-2 rounded-md">
+        <div>
+            <h1 class="text-sm font-semibold">${card.name}</h1>
+            <h2 class="text-base font-normal text-[#1F293770]">${card.price} x <span>1</span></h2>
+        </div>
+        <button class="text-[#1F293780] btn btn-xs remove-btn">X</button>
+    </div>
+    `;
+  cartContainer.append(div);
+
+  let totalPrice = document.getElementById("total-price");
+    totalPrice.innerText = Number(totalPrice.innerText) + card.price;
+    
+    div.querySelector(".remove-btn").addEventListener("click",() => {
+        cartContainer.removeChild(div)
+        
+        totalPrice.innerText = Number(totalPrice.innerText) - card.price
+    })
+
+            alert(card.name + " is added to cart." )
+
 };
 
 // display tree card function
@@ -70,12 +113,20 @@ const displayTreeCard = (cards) => {
                     <p class="px-2 py-1 font-medium text-sm text-[#15803D] rounded-full bg-[#DCFCE7]">${card.category}</p>
                     <p class="font-semibold text-sm">৳${card.price}</p>
                 </div>
-                <button class="w-full font-medium text-base text-white py-2 mt-3 bg-[#15803D] rounded-full hover:bg-green-600">Add to Cart</button>
+                <button class="add-to-cart-btn w-full font-medium text-base text-white py-2 mt-3 bg-[#15803D] rounded-full hover:bg-green-600">Add to Cart</button>
             </div>
         </div>
         `;
+
+    div.querySelector(".add-to-cart-btn").addEventListener("click", () => {
+        addToCart(card);
+        
+    });
+
     plantContainer.append(div);
-  }
+    }
+        manageSpinner(false)
+
 };
 
 // category display function
