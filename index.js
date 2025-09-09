@@ -76,7 +76,7 @@ const addToCart = (card) => {
     <div class="bg-[#F0FDF4] mb-2 flex justify-between items-center px-3 py-2 rounded-md">
         <div>
             <h1 class="text-sm font-semibold">${card.name}</h1>
-            <h2 class="text-base font-normal text-[#1F293770]">${card.price} x <span>1</span></h2>
+            <h2 class="text-base font-normal text-[#1F293770]">৳${card.price} x <span>1</span></h2>
         </div>
         <button class="text-[#1F293780] btn btn-xs remove-btn">X</button>
     </div>
